@@ -60,14 +60,15 @@ public class Productor {
                 
                 channel.basicPublish("", QUEUE_NAME, null, serializedPelicula);
 
-                channel.close();
-                connection.close();
+                
                 
                 System.out.println("Ingresa 0 para finalizar: ");
                 condicion = tec.nextInt();
+                tec.nextLine();
                 
             }
-            
+            channel.close();
+            connection.close();
             
 
             
